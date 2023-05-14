@@ -6,7 +6,7 @@
 
 <a
   class="main-logo"
-  href="{{ route('home') }}"
+  @if (request()->route()->getName() != 'home') href="{{ route('home') }}" @endif
 >
   <img
     src="{{ asset('images/logo.svg') }}"

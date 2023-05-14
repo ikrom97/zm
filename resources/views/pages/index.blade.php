@@ -28,7 +28,7 @@
       <ul class="posts__list">
         @foreach ($data->posts as $post)
           <li class="posts__item">
-            {{ $post->title }}
+            <x-post-card :post="$post" />
           </li>
         @endforeach
       </ul>

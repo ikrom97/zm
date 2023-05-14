@@ -10,8 +10,4 @@
   @include tablet {
     flex-direction: row-reverse;
   }
-
-  @include desktop {
-    gap: 24px;
-  }
 }
