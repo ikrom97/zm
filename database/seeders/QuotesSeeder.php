@@ -424,7 +424,7 @@ class QuotesSeeder extends Seeder
     foreach ($quotes as $key => $quote) {
       $quote = Quote::create([
         'quote' => $quote,
-        'slug' => $key,
+        'slug' => $faker->numberBetween($min = 6, $max = 7) .  $key,
       ]);
 
       foreach (range(1, $faker->numberBetween($min = 2, $max = 16)) as $id) {

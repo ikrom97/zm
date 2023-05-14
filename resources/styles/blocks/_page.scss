@@ -25,4 +25,14 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
+  gap: 16px;
+  background-color: $gray-light;
+
+  @include tablet {
+    gap: 24px;
+  }
+
+  @include desktop {
+    gap: 24px;
+  }
 }

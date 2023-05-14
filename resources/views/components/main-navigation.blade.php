@@ -12,21 +12,21 @@
     class="main-navigation__link{{ $route == 'home' || $route == 'quotesSelected' ? ' main-navigation__link--current' : '' }}"
     @if ($route != 'home') href="{{ route('home') }}" @endif
   >
-    @lang('quotes')
+    Мысли
   </a>
 
   <a
     class="main-navigation__link{{ $route == 'tags' || $route == 'tags.selected' ? ' main-navigation__link--current' : '' }}"
     @if ($route != 'tags') href="{{ route('tags') }}" @endif
   >
-    @lang('tags')
+    Теги
   </a>
 
   <a
     class="main-navigation__link{{ $route == 'author' ? ' main-navigation__link--current' : '' }}"
     @if ($route != 'author') href="{{ route('author') }}" @endif
   >
-    @lang('aboutAuthor')
+    Об авторе
   </a>
 
   <button
@@ -40,6 +40,6 @@
     >
       <use xlink:href="{{ asset('images/stack.svg') }}#search" />
     </svg>
-    @lang('search')
+    Поиск
   </button>
 </nav>

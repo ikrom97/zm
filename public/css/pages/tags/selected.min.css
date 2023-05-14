@@ -57,6 +57,18 @@ img {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
+  gap: 16px;
+  background-color: #f4f4f4;
+}
+@media (min-width: 768px) {
+  .page__body {
+    gap: 24px;
+  }
+}
+@media (min-width: 1200px) {
+  .page__body {
+    gap: 24px;
+  }
 }
 
 .main-logo {
@@ -118,6 +130,9 @@ img {
 }
 @media (min-width: 1200px) {
   .page-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
     padding: 32px 0;
   }
 }

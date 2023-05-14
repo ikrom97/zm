@@ -10,7 +10,7 @@
   <button
     class="page-header__button"
     type="button"
-    aria-label="@lang('toggleMenu')"
+    aria-label="Переключить меню"
   >
     <svg
       width="18"

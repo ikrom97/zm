@@ -1,1 +1,17 @@
 @import "../global/_global.scss";
+@import "../blocks/_quotes.scss";
+@import "../blocks/_posts.scss";
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include tablet {
+    flex-direction: row-reverse;
+  }
+
+  @include desktop {
+    gap: 24px;
+  }
+}
