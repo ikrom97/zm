@@ -1,7 +1,15 @@
 @import '_quote-card.scss';
+@import '_pagination.scss';
 
 .quotes {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include desktop {
+    gap: 24px;
+  }
 }
 
 .quotes__list {

@@ -18,6 +18,8 @@
           </li>
         @endforeach
       </ul>
+
+      {{ $data->quotes->links('components.pagination') }}
     </section>
 
     <aside class="posts">

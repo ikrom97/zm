@@ -67,7 +67,7 @@ img {
 }
 @media (min-width: 1200px) {
   .page__body {
-    gap: 24px;
+    gap: 32px;
   }
 }
 
