@@ -13,7 +13,17 @@ const mix = require('laravel-mix');
 
 mix
   .js('resources/scripts/pages/index.js', 'public/js/pages/index.min.js')
+  .js('resources/scripts/pages/author/index.js', 'public/js/pages/author/index.min.js')
+  .js('resources/scripts/pages/quotes/selected.js', 'public/js/pages/quotes/selected.min.js')
+  .js('resources/scripts/pages/tags/index.js', 'public/js/pages/tags/index.min.js')
+  .js('resources/scripts/pages/tags/selected.js', 'public/js/pages/tags/selected.min.js')
+
   .sass('resources/styles/pages/index.scss', 'public/css/pages/index.min.css')
+  .sass('resources/styles/pages/author/index.scss', 'public/css/pages/author/index.min.css')
+  .sass('resources/styles/pages/quotes/selected.scss', 'public/css/pages/quotes/selected.min.css')
+  .sass('resources/styles/pages/tags/index.scss', 'public/css/pages/tags/index.min.css')
+  .sass('resources/styles/pages/tags/selected.scss', 'public/css/pages/tags/selected.min.css')
+
   .sourceMaps()
   .webpackConfig({
     devtool: 'source-map',

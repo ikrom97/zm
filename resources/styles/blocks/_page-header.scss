@@ -1,0 +1,37 @@
+@import "_main-logo.scss";
+@import "_main-navigation.scss";
+
+.page-header {
+  background-color: $base-primary;
+  color: $base-white;
+  padding: 16px 0;
+
+  @include tablet {
+    padding: 24px 0;
+  }
+
+  @include desktop {
+    padding: 32px 0;
+  }
+}
+
+.page-header__container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.page-header__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: $base-secondary;
+}

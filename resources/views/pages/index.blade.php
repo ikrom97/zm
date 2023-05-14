@@ -8,7 +8,6 @@
   <main class="page-main"></main>
 @endsection
 
-
 @section('scripts')
-  <script src="{{ asset('js/pages/index.min.js') }}"></script>
+  <script src="{{ asset('js/pages/index.min.js') }}" type="module"></script>
 @endsection

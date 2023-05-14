@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [AppController::class, 'index'])->name('home');
-Route::get('/{slug}', [QuotesController::class, 'quotesSelected'])->name('quotes.selected');
-Route::get('/tags', [TagsController::class, 'tags'])->name('tags');
-Route::get('/tags/{slug}', [TagsController::class, 'tagsSelected'])->name('tags.selected');
-Route::get('/author', [AuthorController::class, 'about'])->name('author');
+Route::get('/thoughts/{slug}', [QuotesController::class, 'selected'])->name('quotes.selected');
+Route::get('/tags', [TagsController::class, 'index'])->name('tags');
+Route::get('/tags/{slug}', [TagsController::class, 'selected'])->name('tags.selected');
+Route::get('/author', [AuthorController::class, 'index'])->name('author');
