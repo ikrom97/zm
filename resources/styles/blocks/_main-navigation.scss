@@ -26,6 +26,7 @@
   justify-content: center;
   align-items: center;
   transition: 0.3s;
+  cursor: pointer;
 
   &--current {
     opacity: 0.4;
@@ -34,6 +35,10 @@
   @include tablet {
     padding: 4px 24px;
     border-radius: 8px;
+
+    &:hover {
+      background-color: $base-secondary;
+    }
 
     &--current {
       opacity: 1;

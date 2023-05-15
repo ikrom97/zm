@@ -29,6 +29,14 @@
   margin: 0 auto;
 }
 
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+}
+
 img {
   max-width: 100%;
 }
@@ -98,6 +106,7 @@ img {
   justify-content: center;
   align-items: center;
   transition: 0.3s;
+  cursor: pointer;
 }
 .main-navigation__link--current {
   opacity: 0.4;
@@ -106,6 +115,9 @@ img {
   .main-navigation__link {
     padding: 4px 24px;
     border-radius: 8px;
+  }
+  .main-navigation__link:hover {
+    background-color: #e2b65c;
   }
   .main-navigation__link--current {
     opacity: 1;

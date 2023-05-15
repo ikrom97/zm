@@ -32,6 +32,7 @@
   <button
     class="main-navigation__link"
     type="button"
+    title="Поиск"
   >
     <svg
       class="main-navigation__link-icon"
@@ -40,6 +41,5 @@
     >
       <use xlink:href="{{ asset('images/stack.svg') }}#search" />
     </svg>
-    Поиск
   </button>
 </nav>

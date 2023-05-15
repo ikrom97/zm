@@ -1,12 +1,12 @@
 {
     "/js/pages/index.min.js": "/js/pages/index.min.js?id=6be3025e062c6ffd0a2da03be75c9d0f",
     "/js/pages/author/index.min.js": "/js/pages/author/index.min.js?id=dceae5703ddd87784a3b89e93ae4e96f",
-    "/js/pages/quotes/selected.min.js": "/js/pages/quotes/selected.min.js?id=15d54465b3acea610d0d5a2939fd8687",
+    "/js/pages/quotes/selected.min.js": "/js/pages/quotes/selected.min.js?id=abc3c878d413e8e29ed39906122c4c22",
     "/js/pages/tags/index.min.js": "/js/pages/tags/index.min.js?id=05feb045814be05b680363a0629ad8d2",
     "/js/pages/tags/selected.min.js": "/js/pages/tags/selected.min.js?id=0bbfd6e2c97921369676c306717f5d5b",
-    "/css/pages/tags/selected.min.css": "/css/pages/tags/selected.min.css?id=fb2a2315cfad5426ae062592b3027529",
-    "/css/pages/tags/index.min.css": "/css/pages/tags/index.min.css?id=e6a18f1a40b590e7e8e8a88c325b08a4",
-    "/css/pages/quotes/selected.min.css": "/css/pages/quotes/selected.min.css?id=fb2a2315cfad5426ae062592b3027529",
-    "/css/pages/author/index.min.css": "/css/pages/author/index.min.css?id=e6a18f1a40b590e7e8e8a88c325b08a4",
-    "/css/pages/index.min.css": "/css/pages/index.min.css?id=87aea9b750cb28db7435e8d2399f4157"
+    "/css/pages/tags/selected.min.css": "/css/pages/tags/selected.min.css?id=cae0dce5955b2ad825e582dbbc9da52b",
+    "/css/pages/tags/index.min.css": "/css/pages/tags/index.min.css?id=092f4826f39489a0477e7561c17b2ba7",
+    "/css/pages/quotes/selected.min.css": "/css/pages/quotes/selected.min.css?id=fbc8551b5924c037355dc9e9bd7745a6",
+    "/css/pages/author/index.min.css": "/css/pages/author/index.min.css?id=092f4826f39489a0477e7561c17b2ba7",
+    "/css/pages/index.min.css": "/css/pages/index.min.css?id=7cbc1648c1d972a016c6583a7ec4830a"
 }
