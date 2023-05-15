@@ -213,6 +213,11 @@ img {
   background-color: #ffffff;
   border-radius: 8px;
 }
+@media (min-width: 768px) {
+  .quote-card {
+    flex-grow: 1;
+  }
+}
 
 .quote-card__link {
   text-decoration: none;
@@ -472,12 +477,6 @@ img {
   .quote-selected {
     flex-direction: row-reverse;
     align-items: flex-start;
-  }
-}
-
-@media (min-width: 768px) {
-  .quote-selected__quote {
-    flex-grow: 1;
   }
 }
 

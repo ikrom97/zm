@@ -2,6 +2,10 @@
   margin: 0;
   background-color: $base-white;
   border-radius: 8px;
+
+  @include tablet {
+    flex-grow: 1;
+  }
 }
 
 .quote-card__link {

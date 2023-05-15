@@ -11,10 +11,7 @@
   <main class="quote-selected container">
     <h1 class="visually-hidden">Из философского творчества</h1>
 
-    <x-quote-card
-      class="quote-selected__quote"
-      :quote="$data->quote"
-    />
+    <x-quote-card :quote="$data->quote" />
 
     <aside class="tags">
       <h2 class="tags__title title">
