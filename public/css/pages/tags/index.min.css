@@ -208,4 +208,127 @@ img {
   }
 }
 
+.post-card {
+  display: flex;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
+.post-card__image {
+  border-radius: 4px;
+}
+
+.posts {
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .posts {
+    min-width: -moz-max-content;
+    min-width: max-content;
+    height: calc(100vh - 48px);
+    position: sticky;
+    top: 24px;
+    z-index: 0;
+    padding-right: 6px;
+  }
+}
+@media (min-width: 1200px) {
+  .posts {
+    top: 112px;
+    height: calc(100vh - 136px);
+  }
+}
+
+.posts__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+@media (min-width: 768px) {
+  .posts__list {
+    flex-direction: column;
+    max-height: 100%;
+    padding-right: 6px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .posts__list::-webkit-scrollbar {
+    width: 4px;
+  }
+  .posts__list::-webkit-scrollbar-thumb {
+    background-color: #e2b65c;
+    border-radius: 2px;
+  }
+}
+
+.tags-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .tags-page {
+    flex-direction: row-reverse;
+  }
+}
+
+.tags-page__right {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .tags-page__right {
+    flex-grow: 1;
+    padding: 16px 24px;
+  }
+}
+
+.tags-page__title {
+  padding-bottom: 4px;
+  border-bottom: 1px solid #747474;
+}
+
+.tags-page__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 8px;
+}
+@media (min-width: 768px) {
+  .tags-page__list {
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    padding-top: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  .tags-page__list {
+    -moz-column-count: 4;
+         column-count: 4;
+  }
+}
+
+.tags-page__list-item {
+  margin-bottom: 4px;
+}
+
+.tags-page__list-link {
+  text-decoration: none;
+  transition: 0.3s;
+}
+@media (min-width: 1200px) {
+  .tags-page__list-link:hover {
+    color: #e2b65c;
+  }
+}
+
 /*# sourceMappingURL=index.min.css.map*/

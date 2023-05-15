@@ -12,3 +12,9 @@
     align-items: flex-start;
   }
 }
+
+.quote-selected__quote {
+  @include tablet {
+    flex-grow: 1;
+  }
+}

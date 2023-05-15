@@ -456,7 +456,6 @@ img {
   gap: 8px;
   transition: 0.3s;
   color: #747474;
-  padding-left: 8px;
 }
 @media (min-width: 1200px) {
   .tags__link:hover {
@@ -473,6 +472,12 @@ img {
   .quote-selected {
     flex-direction: row-reverse;
     align-items: flex-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .quote-selected__quote {
+    flex-grow: 1;
   }
 }
 

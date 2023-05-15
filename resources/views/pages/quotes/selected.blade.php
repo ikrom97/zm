@@ -11,7 +11,10 @@
   <main class="quote-selected container">
     <h1 class="visually-hidden">Из философского творчества</h1>
 
-    <x-quote-card :quote="$data->quote" />
+    <x-quote-card
+      class="quote-selected__quote"
+      :quote="$data->quote"
+    />
 
     <aside class="tags">
       <h2 class="tags__title title">
@@ -37,12 +40,6 @@
               class="tags__link"
               href="{{ route('tags.selected', $tag->slug) }}"
             >
-              <svg
-                width="6"
-                height="22"
-              >
-                <use xlink:href="{{ asset('images/stack.svg') }}#triangle" />
-              </svg>
               {{ $tag->title }}
             </a>
           </li>
