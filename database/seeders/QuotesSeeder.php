@@ -427,10 +427,11 @@ class QuotesSeeder extends Seeder
         'slug' => $faker->numberBetween($min = 6, $max = 7) .  $key,
       ]);
 
+      $tagIds = [];
       foreach (range(1, $faker->numberBetween($min = 2, $max = 16)) as $id) {
-        $quote->tags()->attach($faker->numberBetween($min = 1, $max = 200));
+        array_push($tagIds, $faker->numberBetween($min = 1, $max = 200));
       }
-
+      $quote->tags()->sync($tagIds);
     }
   }
 }

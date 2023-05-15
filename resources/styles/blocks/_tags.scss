@@ -104,6 +104,10 @@
   transition: 0.3s;
   color: $primary-light;
 
+  &--current {
+    color: $base-secondary;
+  }
+
   @include desktop {
     &:hover {
       color: $base-secondary;

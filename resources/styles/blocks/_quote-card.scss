@@ -56,6 +56,10 @@
     display: none;
   }
 
+  &--current {
+    font-weight: bold;
+  }
+
   @include desktop {
     &:hover {
       color: $base-secondary;
@@ -98,6 +102,7 @@
   max-width: 24px;
   width: 24px;
   height: 24px;
+  margin-left: auto;
 }
 
 .quote-card__share-links {

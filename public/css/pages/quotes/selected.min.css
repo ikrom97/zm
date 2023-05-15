@@ -267,6 +267,9 @@ img {
   visibility: hidden;
   display: none;
 }
+.quote-card__tag--current {
+  font-weight: bold;
+}
 @media (min-width: 1200px) {
   .quote-card__tag:hover {
     color: #e2b65c;
@@ -307,6 +310,7 @@ img {
   max-width: 24px;
   width: 24px;
   height: 24px;
+  margin-left: auto;
 }
 
 .quote-card__share-links {
@@ -461,6 +465,9 @@ img {
   gap: 8px;
   transition: 0.3s;
   color: #747474;
+}
+.tags__link--current {
+  color: #e2b65c;
 }
 @media (min-width: 1200px) {
   .tags__link:hover {
