@@ -238,6 +238,120 @@ img {
   }
 }
 
+.search-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111111;
+  border: none;
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: all;
+}
+.search-modal-shown .search-modal {
+  visibility: visible;
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .search-modal {
+    background-color: rgba(17, 17, 17, 0.8);
+  }
+}
+@media (min-width: 1200px) {
+  .search-modal {
+    padding-top: 16vh;
+  }
+}
+
+.search-modal-shown {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.search-modal__title {
+  color: #ffffff;
+  padding: 16px;
+}
+
+.search-modal__form {
+  background-color: #ffffff;
+  flex-grow: 1;
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  max-width: 560px;
+  padding: 16px 24px;
+}
+@media (min-width: 1200px) {
+  .search-modal__form {
+    flex-grow: 0;
+    border-radius: 8px;
+  }
+}
+
+.search-modal__input {
+  display: flex;
+  width: 100%;
+  border: none;
+  padding: 0;
+  color: #111111;
+  font-size: 16px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #b2b2b2;
+}
+.search-modal__input::-moz-placeholder {
+  color: #b2b2b2;
+}
+.search-modal__input::placeholder {
+  color: #b2b2b2;
+}
+.search-modal__input:focus {
+  outline: none;
+  border-bottom: 1px solid #e2b65c;
+}
+
+.search-modal__results ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 16px;
+}
+.search-modal__results ul li {
+  margin-bottom: 8px;
+  color: #747474;
+}
+.search-modal__results ul li a {
+  text-decoration: none;
+  padding: 4px 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.search-modal__close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: #e2b65c;
+  cursor: pointer;
+}
+
 .quote-card {
   margin: 0;
   background-color: #ffffff;

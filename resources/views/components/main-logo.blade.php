@@ -1,11 +1,11 @@
 @props(['class' => null])
 
 @php
-  $className = $class ? "$class main-navigation" : 'main-navigation';
+  $className = $class ? "$class main-logo" : 'main-logo';
 @endphp
 
 <a
-  class="main-logo"
+  class="{{ $className }}"
   @if (request()->route()->getName() != 'home') href="{{ route('home') }}" @endif
 >
   <img

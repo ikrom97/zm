@@ -17,4 +17,12 @@ class QuotesController extends Controller
 
     return view('pages.quotes.selected', compact('data'));
   }
+
+  public function search(Request $request)
+  {
+    $data = new stdClass();
+    $data->quotes = Quote::where('quote', 'like', '%' . $request->keyword . '%')->paginate(10);
+
+    return view('components.search-modal-results', compact('data'))->render();
+  }
 }

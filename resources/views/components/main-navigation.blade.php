@@ -30,7 +30,7 @@
   </a>
 
   <button
-    class="main-navigation__link"
+    class="main-navigation__link main-navigation__link--search"
     type="button"
     title="Поиск"
   >
