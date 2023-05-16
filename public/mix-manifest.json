@@ -1,12 +1,14 @@
 {
-    "/js/pages/index.min.js": "/js/pages/index.min.js?id=bb976829ec684716b4431da7d29142d0",
+    "/js/pages/index.min.js": "/js/pages/index.min.js?id=dab0bdd43720cb9e63f26d057d5b4ce0",
     "/js/pages/author/index.min.js": "/js/pages/author/index.min.js?id=608950d8a2a859802c52e5c4e94f39eb",
     "/js/pages/quotes/selected.min.js": "/js/pages/quotes/selected.min.js?id=55e7a18caa5cb6777196f46e85f4486c",
     "/js/pages/tags/index.min.js": "/js/pages/tags/index.min.js?id=31399b0739a7eb7398c2d31cfe498801",
     "/js/pages/tags/selected.min.js": "/js/pages/tags/selected.min.js?id=cfbe47aac45710d69cdd2e36e308c02c",
+    "/js/auth/login.min.js": "/js/auth/login.min.js?id=436060bf806db21733bac6a3667d6934",
     "/css/pages/tags/selected.min.css": "/css/pages/tags/selected.min.css?id=db4361ae1156630d1a113a5ae49f716c",
     "/css/pages/tags/index.min.css": "/css/pages/tags/index.min.css?id=7ecc0221353aea95ce17539a58b8dbac",
     "/css/pages/quotes/selected.min.css": "/css/pages/quotes/selected.min.css?id=8c918f9c67cbc15655cb17236c745b95",
     "/css/pages/author/index.min.css": "/css/pages/author/index.min.css?id=6b85b45f4119092fcdfccd8eda70dc04",
-    "/css/pages/index.min.css": "/css/pages/index.min.css?id=f5d3c60035699ce0d832b36b8793a242"
+    "/css/pages/index.min.css": "/css/pages/index.min.css?id=f5d3c60035699ce0d832b36b8793a242",
+    "/css/auth/login.min.css": "/css/auth/login.min.css?id=9d7b90e82162436c5fc1d1664d8b7ce6"
 }
