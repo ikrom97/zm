@@ -14,7 +14,7 @@
 >
   <img
     class="post-card__image"
-    src="{{ asset($post->image) }}"
+    src="{{ asset($post->thumb_image) }}"
     width="220"
     height="160"
     alt="{{ $post->alternative_text }}"
