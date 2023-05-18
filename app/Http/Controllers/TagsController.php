@@ -37,60 +37,52 @@ class TagsController extends Controller
     try {
       return Tag::orderBy('title', 'asc')->get();
     } catch (\Throwable $th) {
-      return $th;
+      return response([
+        'message' => 'Не удалось найти данные',
+        'error' => $th,
+      ]);
     }
   }
 
   public function store(Request $request)
   {
     try {
-      Tag::create(['title' => $request->title]);
+      $tag = Tag::create(['title' => $request->title]);
 
-      return response(['message' => 'Данные успешно сохранены'], 200);
+      return response([
+        'tag' => $tag,
+        'message' => 'Тег успешно добавлен',
+      ], 200);
     } catch (\Throwable $th) {
       return $th;
     }
   }
 
-  public function show($id)
+  public function update(Request $request, Tag $tag)
   {
-    try {
-      return Tag::find($id);
-    } catch (\Throwable $th) {
-      return $th;
-    }
-  }
+    $tag = Tag::find(request('id'));
+    $tag->title = request('title');
 
-  public function update(Request $request, $id)
-  {
     try {
-      $tag = Tag::find($id);
-      $tag->title = $request->title;
       $tag->update();
 
-      return $tag;
+      return response([
+        'tag' => $tag,
+        'message' => 'Тег успешно сохранен',
+      ], 200);
     } catch (\Throwable $th) {
       return $th;
     }
   }
 
-  public function destroy($id)
+  public function destroy(Tag $tag)
   {
     try {
-      return Tag::find($id)->delete();
-    } catch (\Throwable $th) {
-      return $th;
-    }
-  }
+      $tag = Tag::find(request('id'));
+      $tag->quotes()->detach();
+      $tag->delete();
 
-  public function multidelete(Request $request)
-  {
-    try {
-      foreach ((array) request('ids') as $id) {
-        Tag::find($id)->delete();
-      }
-
-      return;
+      return response(['message' => 'Тег удален'], 200);
     } catch (\Throwable $th) {
       return $th;
     }

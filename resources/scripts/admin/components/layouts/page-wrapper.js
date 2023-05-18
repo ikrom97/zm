@@ -8,7 +8,7 @@ function PageWrapper() {
       <AppBar position="sticky">
         <Toolbar>
           <Typography variant="h6" component="h1">
-            Админ панель ФШТ (Федерация шахмат Таджикистана)
+            Админ панель ZM
           </Typography>
         </Toolbar>
       </AppBar>

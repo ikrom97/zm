@@ -6,11 +6,7 @@ export const AppRoute = {
     'create': '/admin/quotes/create',
     'edit': '/admin/quotes/:id/edit',
   },
-  Tags: {
-    'index': '/admin/tags',
-    'create': '/admin/tags/create',
-    'edit': '/admin/tags/:id/edit',
-  },
+  Tags: '/admin/tags',
   Posts: {
     'index': '/admin/posts',
     'create': '/admin/posts/create',

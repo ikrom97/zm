@@ -17,12 +17,8 @@ function PageNavigation() {
           <ListItemText primary="Мысли" />
         </ListItemButton>
 
-        <ListItemButton href={AppRoute.Tags['index']}>
+        <ListItemButton href={AppRoute.Tags}>
           <ListItemText primary="Теги" />
-        </ListItemButton>
-
-        <ListItemButton href={AppRoute.Posts['index']}>
-          <ListItemText primary="Картинки" />
         </ListItemButton>
 
         <ListItemButton href={AppRoute.Logout}>
