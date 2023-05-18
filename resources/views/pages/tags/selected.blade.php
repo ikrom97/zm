@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
 @section('links')
-  <link
-    rel="stylesheet"
-    href="{{ asset('css/pages/tags/selected.min.css') }}"
-  >
+  <link rel="stylesheet" href="{{ asset('css/pages/tags/selected.min.css') }}">
 @endsection
 
 @section('content')
@@ -13,16 +10,9 @@
 
     <aside class="tags">
       <h2 class="tags__title title">
-        <button
-          class="tags__button"
-          type="button"
-        >
+        <button class="tags__button" type="button">
           Теги
-          <svg
-            class="tags__button-icon"
-            width="9"
-            height="12"
-          >
+          <svg class="tags__button-icon" width="9" height="12">
             <use xlink:href="{{ asset('images/stack.svg') }}#arrow" />
           </svg>
         </button>
@@ -37,10 +27,7 @@
         @foreach ($data->tags as $tag)
           @if ($tag != $data->selectedTag)
             <li class="tags__item">
-              <a
-                class="tags__link"
-                href="{{ route('tags.selected', $tag->slug) }}"
-              >
+              <a class="tags__link" href="{{ route('tags.selected', $tag->slug) }}">
                 {{ $tag->title }}
               </a>
             </li>
@@ -55,10 +42,7 @@
       <ul class="quotes__list">
         @foreach ($data->quotes as $quote)
           <li class="quotes__item">
-            <x-quote-card
-              :quote="$quote"
-              :selectedTag="$data->selectedTag"
-            />
+            <x-quote-card :quote="$quote" :selectedTag="$data->selectedTag" />
           </li>
         @endforeach
       </ul>

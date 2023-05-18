@@ -29,7 +29,7 @@ class AuthController extends Controller
     if (Hash::check($request->password, $user->password)) {
       session()->put('user', $user->id);
 
-      return response(['route' => route('home')], 200);
+      return $user;
     } else {
       return response(['error' => 'Неправильный пароль'], 400);
     }

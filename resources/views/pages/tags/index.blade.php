@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
 @section('links')
-  <link
-    rel="stylesheet"
-    href="{{ asset('css/pages/tags/index.min.css') }}"
-  >
+  <link rel="stylesheet" href="{{ asset('css/pages/tags/index.min.css') }}">
 @endsection
 
 @section('content')
@@ -15,10 +12,7 @@
       <ul class="tags-page__list">
         @foreach ($data->tags as $tag)
           <li class="tags-page__list-item">
-            <a
-              class="tags-page__list-link"
-              href="{{ route('tags.selected', $tag->slug) }}"
-            >
+            <a class="tags-page__list-link" href="{{ route('tags.selected', $tag->slug) }}">
               {{ $tag->title }}
             </a>
           </li>

@@ -25,4 +25,79 @@ class QuotesController extends Controller
 
     return view('components.search-modal-results', compact('data'))->render();
   }
+
+  public function index()
+  {
+    try {
+      return Quote::latest()->get();
+    } catch (\Throwable $th) {
+      return $th;
+    }
+  }
+
+  public function store(Request $request)
+  {
+    try {
+      $quote = Quote::create([
+        'quote' => $request->quote,
+        'slug' => $request->slug,
+      ]);
+
+      if ($request->tags) {
+        $quote->tags()->sync((array)$request->tags);
+      }
+
+      return response(['message' => 'Данные успешно сохранены'], 200);
+    } catch (\Throwable $th) {
+      return $th;
+    }
+  }
+
+  public function show($id)
+  {
+    try {
+      return Quote::with('tags')->find($id);
+    } catch (\Throwable $th) {
+      return $th;
+    }
+  }
+
+  public function update(Request $request, $id)
+  {
+    try {
+      $quote = Quote::find($id);
+      $quote->quote = $request->quote;
+      $quote->slug = $request->slug;
+      $quote->update();
+
+      $quote->tags()->sync((array)$request->tags);
+
+      return Quote::with('tags')->find($id);
+    } catch (\Throwable $th) {
+      return $th;
+    }
+  }
+
+  public function destroy($id)
+  {
+    try {
+      Quote::find($id)->delete();
+      return;
+    } catch (\Throwable $th) {
+      return $th;
+    }
+  }
+
+  public function multidelete(Request $request)
+  {
+    try {
+      foreach ((array) request('ids') as $id) {
+        Quote::find($id)->delete();
+      }
+
+      return;
+    } catch (\Throwable $th) {
+      return $th;
+    }
+  }
 }

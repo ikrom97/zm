@@ -6,15 +6,8 @@
   </div>
 
   <template id="menu-toggler">
-    <button
-      class="page-header__button"
-      type="button"
-      aria-label="Переключить меню"
-    >
-      <svg
-        width="18"
-        height="12"
-      >
+    <button class="page-header__button" type="button" aria-label="Переключить меню">
+      <svg width="18" height="12">
         <use xlink:href="{{ asset('images/stack.svg') }}#menu" />
       </svg>
     </button>

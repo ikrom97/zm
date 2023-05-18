@@ -51,7 +51,7 @@
   </div>
 
   <footer class="quote-card__bottom">
-    @if (count($quote->tags) - 3 != 0)
+    @if (count($quote->tags) - 3 > 0)
       <button
         class="quote-card__button"
         type="button"

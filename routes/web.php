@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\QuotesController;
 use App\Http\Controllers\TagsController;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,29 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::get('/tags', [TagsController::class, 'index'])->name('tags');
   Route::get('/tags/{slug}', [TagsController::class, 'selected'])->name('tags.selected');
   Route::get('/author', [AuthorController::class, 'index'])->name('author');
+
+  Route::group(['middleware' => ['AdminCheck']], function () {
+    Route::view('/admin/{path?}', 'admin')->where('path', '.*');
+
+    Route::get('/quote', [QuotesController::class, 'index']);
+    Route::post('/quote', [QuotesController::class, 'store']);
+    Route::get('/quote/{id}', [QuotesController::class, 'show']);
+    Route::post('/quote/{id}', [QuotesController::class, 'update']);
+    Route::delete('/quote/{id}', [QuotesController::class, 'destroy']);
+    Route::post('/quotes/delete', [QuotesController::class, 'multidelete']);
+
+    Route::get('/tag', [TagsController::class, 'get']);
+    Route::post('/tag', [TagsController::class, 'store']);
+    Route::get('/tag/{id}', [TagsController::class, 'show']);
+    Route::post('/tag/{id}', [TagsController::class, 'update']);
+    Route::delete('/tag/{id}', [TagsController::class, 'destroy']);
+    Route::post('/tags/delete', [TagsController::class, 'multidelete']);
+
+    Route::get('/post', [PostsController::class, 'index']);
+    Route::post('/post', [PostsController::class, 'store']);
+    Route::get('/post/{id}', [PostsController::class, 'show']);
+    Route::post('/post/{id}', [PostsController::class, 'update']);
+    Route::delete('/post/{id}', [PostsController::class, 'destroy']);
+    Route::post('/posts/delete', [PostsController::class, 'multidelete']);
+  });
 });

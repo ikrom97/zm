@@ -19,7 +19,13 @@ form.addEventListener('submit', (evt) => {
       login: form.login.value,
       password: form.password.value,
     })
-    .then(() => window.location.href = '/')
+    .then(({ data }) => {
+      if (data.role === 'admin') {
+        window.location.href = '/admin';
+        return;
+      }
+      window.location.href = '/';
+    })
     .catch((error) => {
       form.querySelector('.login__error').innerHTML = error.response.data.error;
     });

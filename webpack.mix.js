@@ -26,6 +26,8 @@ mix
   .sass('resources/styles/pages/tags/selected.scss', 'public/css/pages/tags/selected.min.css')
   .sass('resources/styles/auth/login.scss', 'public/css/auth/login.min.css')
 
+  .js('resources/scripts/admin/index.js', 'public/js/admin.min.js').react()
+
   .sourceMaps()
   .webpackConfig({
     devtool: 'source-map',
