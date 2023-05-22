@@ -56,7 +56,7 @@
         class="quote-card__button"
         type="button"
         aria-label="Показать/скрыть теги"
-        data-show-text="Ещё {{ count($quote->tags) - 3 }} тегов"
+        data-show-text="Ещё теги"
         data-hide-text="Скрыть теги"
       ></button>
     @endif
@@ -66,6 +66,8 @@
         <a
           class="quote-card__share-link"
           title="Фейсбук"
+          href="https://www.facebook.com/sharer/sharer.php?u={{ route('quotes.selected', $quote->slug) }}"
+          target="_blank"
         >
           <svg
             width="16"
@@ -76,18 +78,9 @@
         </a>
         <a
           class="quote-card__share-link"
-          title="Инстаграм"
-        >
-          <svg
-            width="12"
-            height="12"
-          >
-            <use xlink:href="{{ asset('images/stack.svg') }}#instagram" />
-          </svg>
-        </a>
-        <a
-          class="quote-card__share-link"
           title="Твиттер"
+          href="https://twitter.com/intent/tweet?url={{ route('quotes.selected', $quote->slug) }}"
+          target="_blank"
         >
           <svg
             width="12"
@@ -99,6 +92,8 @@
         <a
           class="quote-card__share-link"
           title="Телеграм"
+          href="https://telegram.me/share/url?url={{ route('quotes.selected', $quote->slug) }}"
+          target="_blank"
         >
           <svg
             width="16"

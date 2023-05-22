@@ -416,10 +416,5 @@ img {
   gap: 16px;
   color: #747474;
 }
-@media (min-width: 768px) {
-  .author-page__info-item {
-    padding: 16px;
-  }
-}
 
 /*# sourceMappingURL=index.min.css.map*/

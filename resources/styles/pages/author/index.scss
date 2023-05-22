@@ -59,8 +59,4 @@
   flex-direction: column;
   gap: 16px;
   color: $primary-light;
-
-  @include tablet {
-    padding: 16px;
-  }
 }
