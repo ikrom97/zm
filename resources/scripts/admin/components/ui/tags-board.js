@@ -5,9 +5,20 @@ import { Box, Button, Grid, TextField } from '@mui/material';
 import { Stack } from '@mui/system';
 import { toast } from 'react-toastify';
 import { ApiRoute, dataGridLocalText } from '../../const';
+import { generatePath } from 'react-router-dom';
 
 export default function TagsBoard() {
   const [rows, setRows] = useState([]);
+  const [selection, setSelection] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(ApiRoute.Tags['index'])
+      .then(({ data }) => {
+        setRows(data.map(({ id, title }) => ({ id, title })));
+      })
+      .catch(({ response }) => toast.error(response.data.message));
+  }, []);
 
   const handleDeleteButtonClick = (id, title) => () => {
     const isConfirmed = window.confirm(
@@ -16,12 +27,12 @@ export default function TagsBoard() {
 
     isConfirmed &&
       axios
-        .post(ApiRoute.Tags['delete'], { id })
+        .delete(generatePath(ApiRoute.Tags['delete'], { id }))
         .then(({ data }) => {
           toast.success(data.message);
           setRows([...rows.filter((row) => row.id !== id)]);
         })
-        .catch(({ response }) => toast.error(response.data.message));
+        .catch((error) => console.log(error));
   };
 
   const handleFormSubmit = (evt) => {
@@ -38,12 +49,24 @@ export default function TagsBoard() {
   };
 
   const handleProcessRowUpdate = (newRow) => {
-    axios.post(ApiRoute.Tags['update'], newRow)
+    axios
+      .post(ApiRoute.Tags['update'], newRow)
       .then(({ data }) => toast.success(data.message))
       .catch((error) => console.log(error));
 
     return newRow;
   }
+
+  const handleDeleteSelectedButtonClick = () => {
+    window.confirm(
+      `Вы уверены что хотите безвозвратно удалить выбранные?
+      \nВыбрано ${selection.length}`
+    ) &&
+      axios
+        .post(ApiRoute.Tags['multidelete'], { ids: selection })
+        .then(() => setRows([...rows.filter((row) => !selection.includes(row.id))]))
+        .catch((error) => console.log(error));
+  };
 
   const columns = [
     {
@@ -51,12 +74,12 @@ export default function TagsBoard() {
       headerName: 'ID',
       align: 'center',
       headerAlign: 'center',
-      width: 50,
+      width: 80,
     },
     {
       field: 'title',
       headerName: 'Название',
-      width: 400,
+      width: 320,
       editable: true,
     },
     {
@@ -80,17 +103,19 @@ export default function TagsBoard() {
     },
   ];
 
-  useEffect(() => {
-    axios.get(ApiRoute.Tags['index'])
-      .then(({ data }) => {
-        setRows(data.map(({ id, title }) => ({ id, title })));
-      })
-      .catch(({ response }) => toast.error(response.data.message));
-  }, []);
-
   return (
     <Grid container spacing={2} marginTop={0}>
       <Grid item xs={6}>
+        <Stack direction="row" justifyContent="right" marginBottom={1} spacing={1}>
+          <Button
+            variant="contained"
+            color="error"
+            disabled={!selection.length}
+            onClick={handleDeleteSelectedButtonClick}
+          >
+            Удалить выбранные ({selection.length})
+          </Button>
+        </Stack>
         <Box
           component="form"
           sx={{
@@ -124,14 +149,16 @@ export default function TagsBoard() {
         </Box>
 
         <DataGrid
-          sx={{ backgroundColor: 'white', height: 631 }}
+          sx={{ backgroundColor: 'white', height: 1151 }}
           rows={rows}
           columns={columns}
-          pageSize={10}
-          rowsPerPageOptions={[10]}
+          pageSize={20}
+          rowsPerPageOptions={[20]}
+          checkboxSelection
           disableSelectionOnClick
           experimentalFeatures={{ newEditingApi: true }}
           localeText={dataGridLocalText}
+          onSelectionModelChange={(newSelectionModel) => setSelection(newSelectionModel)}
           processRowUpdate={handleProcessRowUpdate}
         />
       </Grid>

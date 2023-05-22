@@ -15,7 +15,8 @@ export default function QuotesBoard() {
   const [selection, setSelection] = useState([]);
 
   useEffect(() => {
-    axios.get(ApiRoute.Quotes['index'])
+    axios
+      .get(ApiRoute.Quotes['index'])
       .then(({ data }) => setRows(data.map(({ id, quote, slug }) => ({
         id,
         quote,
@@ -29,6 +30,17 @@ export default function QuotesBoard() {
       axios
         .delete(generatePath(ApiRoute.Quotes['delete'], { id }))
         .then(() => setRows([...rows.filter((row) => row.id !== id)]))
+        .catch(({ response }) => toast.error(response.data.message));
+  };
+
+  const handleDeleteSelectedButtonClick = () => {
+    window.confirm(
+      `Вы уверены что хотите безвозвратно удалить выбранные?
+      \nВыбрано ${selection.length}`
+    ) &&
+      axios
+        .post(ApiRoute.Quotes['multidelete'], { ids: selection })
+        .then(() => setRows([...rows.filter((row) => !selection.includes(row.id))]))
         .catch(({ response }) => toast.error(response.data.message));
   };
 
@@ -79,17 +91,6 @@ export default function QuotesBoard() {
     },
   ];
 
-  const handleDeleteSelectedButtonClick = () => {
-    window.confirm(
-      `Вы уверены что хотите безвозвратно удалить выбранные?
-      \nВыбрано ${selection.length}`
-    ) &&
-      axios
-        .post(ApiRoute.Quotes['multidelete'], { ids: selection })
-        .then(() => setRows([...rows.filter((row) => !selection.includes(row.id))]))
-        .catch(({ response }) => toast.error(response.data.message));
-  };
-
   return (
     <>
       <Stack direction="row" justifyContent="right" marginBottom={1} spacing={1}>
@@ -111,11 +112,11 @@ export default function QuotesBoard() {
       </Stack>
 
       <DataGrid
-        sx={{ backgroundColor: 'white', height: 631 }}
+        sx={{ backgroundColor: 'white', height: 1151 }}
         rows={rows}
         columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[10]}
+        pageSize={20}
+        rowsPerPageOptions={[20]}
         checkboxSelection
         disableSelectionOnClick
         onSelectionModelChange={(newSelectionModel) => setSelection(newSelectionModel)}

@@ -78,11 +78,25 @@ class TagsController extends Controller
   public function destroy(Tag $tag)
   {
     try {
-      $tag = Tag::find(request('id'));
       $tag->quotes()->detach();
       $tag->delete();
 
-      return response(['message' => 'Тег удален'], 200);
+      return response(['message' => 'Тег успешно удален'], 200);
+    } catch (\Throwable $th) {
+      return $th;
+    }
+  }
+
+  public function multidelete(Request $request)
+  {
+    try {
+      foreach ((array) request('ids') as $id) {
+        $tag = Tag::find($id);
+        $tag->quotes()->detach();
+        $tag->delete();
+      }
+
+      return response(['message' => 'Теги успешно удалены'], 200);
     } catch (\Throwable $th) {
       return $th;
     }

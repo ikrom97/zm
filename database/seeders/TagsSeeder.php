@@ -309,9 +309,7 @@ class TagsSeeder extends Seeder
     ];
 
     foreach ($tags as $tag) {
-      Tag::create([
-        'title' => $tag,
-      ]);
+      Tag::create(['title' => $tag]);
     }
   }
 }

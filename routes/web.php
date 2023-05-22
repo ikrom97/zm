@@ -45,8 +45,8 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::post('/tag', [TagsController::class, 'store']);
     Route::get('/tag/{id}', [TagsController::class, 'show']);
     Route::post('/tag/{id}', [TagsController::class, 'update']);
-    Route::delete('/tag/{id}', [TagsController::class, 'destroy']);
-    Route::post('/tags/delete', [TagsController::class, 'multidelete']);
+    Route::delete('/tag/{tag}', [TagsController::class, 'destroy']);
+    Route::post('/tag-delete', [TagsController::class, 'multidelete']);
 
     Route::get('/post', [PostsController::class, 'index']);
     Route::post('/post', [PostsController::class, 'store']);

@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use League\CommonMark\Extension\SmartPunct\Quote;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Tag extends Model
 {
@@ -17,7 +16,7 @@ class Tag extends Model
   {
     return [
       'slug' => [
-        'source' => ['title', 'id']
+        'source' => 'title'
       ]
     ];
   }

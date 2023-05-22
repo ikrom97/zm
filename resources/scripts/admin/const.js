@@ -30,7 +30,7 @@ export const ApiRoute = {
     'show': '/tag/:id',
     'update': '/tag/:id',
     'delete': '/tag/:id',
-    'multidelete': '/tags/delete',
+    'multidelete': '/tag-delete',
   },
   Posts: {
     'index': '/post',
