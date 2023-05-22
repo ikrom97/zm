@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import { ApiRoute, AppRoute } from '../../const';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import dayjs from 'dayjs';
 
 export default function QuotesBoard() {
   const [rows, setRows] = useState([]);
@@ -17,8 +18,9 @@ export default function QuotesBoard() {
   useEffect(() => {
     axios
       .get(ApiRoute.Quotes['index'])
-      .then(({ data }) => setRows(data.map(({ id, quote, slug }) => ({
+      .then(({ data }) => setRows(data.map(({ id, quote, slug, created_at }) => ({
         id,
+        created_at: dayjs(created_at).format('YYYY-MM-DD hh:mm'),
         quote,
         slug: `#${slug}`,
       }))))
@@ -46,7 +48,8 @@ export default function QuotesBoard() {
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 72 },
-    { field: 'quote', headerName: 'Мысль', width: 780 },
+    { field: 'created_at', headerName: 'Дата', width: 140 },
+    { field: 'quote', headerName: 'Мысль', width: 640 },
     {
       field: 'slug',
       headerName: 'Слаг',
