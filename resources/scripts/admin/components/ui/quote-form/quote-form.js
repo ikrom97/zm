@@ -63,7 +63,7 @@ export default function QuoteForm({ onSubmit, quote }) {
               onChange={handleSelectChange}
               input={<OutlinedInput label="Теги" />}
               value={selectedTags}
-              renderValue={(selected) => selected.map((id) => tags.find((tag) => tag.id === id).title).join(', ')}
+              renderValue={(selected) => selected?.map((id) => tags.find((tag) => tag.id === id)?.title).join(', ')}
             >
               {tags?.map((tag) => (
                 <MenuItem
