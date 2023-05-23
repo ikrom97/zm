@@ -20,7 +20,7 @@ export default function QuotesBoard() {
       .get(ApiRoute.Quotes['index'])
       .then(({ data }) => setRows(data.map(({ id, quote, slug, created_at }) => ({
         id,
-        created_at: dayjs(created_at).format('YYYY-MM-DD hh:mm'),
+        created_at: dayjs(created_at).format('YYYY-MM-DD HH:mm'),
         quote,
         slug: `#${slug?.padStart(4, '0')}`,
       }))))
