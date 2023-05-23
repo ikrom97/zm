@@ -71,7 +71,7 @@ export default function QuoteForm({ onSubmit, quote }) {
                   value={tag.id}
                 >
                   <Checkbox checked={selectedTags.indexOf(tag.id) > -1} />
-                  <ListItemText primary={tag.title} />
+                  <ListItemText primary={tag?.title} />
                 </MenuItem>
               ))}
             </Select>
