@@ -13,7 +13,7 @@
     class="quote-card__link"
     href="{{ route('quotes.selected', $quote->slug) }}"
   >
-    #{{ $quote->slug }}
+    #{{ str_pad($quote->slug, 4, '0', STR_PAD_LEFT) }}
   </a>
 
   <div class="quote-card__top">

@@ -7,6 +7,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import axios from 'axios';
 import { ApiRoute } from '../../../const';
+import Checkbox from '@mui/material/Checkbox';
+import ListItemText from '@mui/material/ListItemText';
 
 export default function QuoteForm({ onSubmit, quote }) {
   const [tags, setTags] = useState([]);
@@ -51,19 +53,7 @@ export default function QuoteForm({ onSubmit, quote }) {
           />
         </Grid>
 
-        <Grid item xs={4}>
-          <TextField
-            name="slug"
-            label="Слаг"
-            defaultValue={quote?.slug}
-            placeholder="12345"
-            type="text"
-            fullWidth
-            required
-          />
-        </Grid>
-
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <FormControl fullWidth>
             <InputLabel id="tags">Теги</InputLabel>
             <Select
@@ -73,13 +63,15 @@ export default function QuoteForm({ onSubmit, quote }) {
               onChange={handleSelectChange}
               input={<OutlinedInput label="Теги" />}
               value={selectedTags}
+              renderValue={(selected) => selected.map((id) => tags.find((tag) => tag.id === id).title).join(', ')}
             >
               {tags?.map((tag) => (
                 <MenuItem
                   key={tag.id}
                   value={tag.id}
                 >
-                  {tag.title}
+                  <Checkbox checked={selectedTags.indexOf(tag.id) > -1} />
+                  <ListItemText primary={tag.title} />
                 </MenuItem>
               ))}
             </Select>

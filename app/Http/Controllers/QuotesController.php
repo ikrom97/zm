@@ -40,8 +40,10 @@ class QuotesController extends Controller
     try {
       $quote = Quote::create([
         'quote' => $request->quote,
-        'slug' => $request->slug,
       ]);
+
+      $quote->slug = $quote->id;
+      $quote->update();
 
       if ($request->tags) {
         $quote->tags()->sync((array)$request->tags);

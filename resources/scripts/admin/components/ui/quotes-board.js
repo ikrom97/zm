@@ -22,7 +22,7 @@ export default function QuotesBoard() {
         id,
         created_at: dayjs(created_at).format('YYYY-MM-DD hh:mm'),
         quote,
-        slug: `#${slug}`,
+        slug: `#${slug?.padStart(4, '0')}`,
       }))))
       .catch(({ response }) => toast.error(response.data.message));
   }, []);
