@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ApiRoute, AppRoute } from '../../../const';
 import QuoteForm from '../../ui/quote-form/quote-form';
+import { toast } from 'react-toastify';
 
 export default function QuotesCreate() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function QuotesCreate() {
         tags: evt.target.tags.value.split(','),
       })
       .then(() => navigate(AppRoute.Quotes['index']))
-      .catch((error) => console.log(error));
+      .catch(({ response }) => toast.error(response.data.message));
   };
 
   return (

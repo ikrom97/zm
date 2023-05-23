@@ -45,7 +45,7 @@ export default function TagsBoard() {
         setRows([data.tag, ...rows])
         evt.target.reset();
       })
-      .catch((error) => console.log(error));
+      .catch(({ response }) => toast.error(response.data.message));
   };
 
   const handleProcessRowUpdate = (newRow) => {

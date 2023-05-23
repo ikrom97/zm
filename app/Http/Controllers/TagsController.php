@@ -47,6 +47,10 @@ class TagsController extends Controller
   public function store(Request $request)
   {
     try {
+      $tag = Tag::where('title', $request->title)->first();
+      if ($tag) {
+        return response(['message' => 'Тег уже существует'], 400);
+      }
       $tag = Tag::create(['title' => $request->title]);
 
       return response([

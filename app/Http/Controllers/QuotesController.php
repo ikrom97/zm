@@ -38,6 +38,11 @@ class QuotesController extends Controller
   public function store(Request $request)
   {
     try {
+      $quote = Quote::where('quote', $request->quote)->first();
+      if ($quote) {
+        return response(['message' => 'Мысль существует'], 400);
+      }
+
       $quote = Quote::create([
         'quote' => $request->quote,
       ]);
