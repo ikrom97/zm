@@ -6,6 +6,9 @@ import QuotesIndex from '../pages/quotes';
 import QuotesCreate from '../pages/quotes/create';
 import QuotesEdit from '../pages/quotes/edit';
 import TagsPage from '../pages/tags-page/tags-page';
+import PostsIndex from '../pages/posts';
+import PostsCreate from '../pages/posts/create';
+import PostsEdit from '../pages/posts/edit';
 
 function App() {
   return (
@@ -19,6 +22,10 @@ function App() {
           <Route path={AppRoute.Quotes['edit']} element={<QuotesEdit />} />
 
           <Route path={AppRoute.Tags} element={<TagsPage />} />
+
+          <Route path={AppRoute.Posts['index']} element={<PostsIndex />} />
+          <Route path={AppRoute.Posts['create']} element={<PostsCreate />} />
+          <Route path={AppRoute.Posts['edit']} element={<PostsEdit />} />
         </Route>
       </Routes>
     </BrowserRouter>

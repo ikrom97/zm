@@ -1,15 +1,15 @@
 {
-    "/js/pages/index.min.js": "/js/pages/index.min.js?id=26f28091bcb95aa1d1fc81f675710204",
-    "/js/pages/author/index.min.js": "/js/pages/author/index.min.js?id=f46f69ae5ca7f70b9939c0739a7330c7",
-    "/js/pages/quotes/selected.min.js": "/js/pages/quotes/selected.min.js?id=87887df265f563abefe16d2fe362ab88",
-    "/js/pages/tags/index.min.js": "/js/pages/tags/index.min.js?id=f46f69ae5ca7f70b9939c0739a7330c7",
-    "/js/pages/tags/selected.min.js": "/js/pages/tags/selected.min.js?id=87887df265f563abefe16d2fe362ab88",
-    "/js/auth/login.min.js": "/js/auth/login.min.js?id=25f1398ab2c96b477d2e69b2c433a128",
-    "/js/admin.min.js": "/js/admin.min.js?id=46f35465d2eca45165d5ed7e0aa86f57",
-    "/css/pages/tags/selected.min.css": "/css/pages/tags/selected.min.css?id=9caa912ead312c037572e9ea8e4c4508",
-    "/css/pages/tags/index.min.css": "/css/pages/tags/index.min.css?id=119f6e3fa41b86024fbb81462be5c363",
-    "/css/pages/quotes/selected.min.css": "/css/pages/quotes/selected.min.css?id=0160ecdb04cf2a5f6898d52fdf34e667",
-    "/css/pages/author/index.min.css": "/css/pages/author/index.min.css?id=017e8bb411528bc0f879b61ac3744c61",
-    "/css/pages/index.min.css": "/css/pages/index.min.css?id=cc73867677ce4bf8bbe5752d31c40187",
-    "/css/auth/login.min.css": "/css/auth/login.min.css?id=32e5631eb086b7ba000dbb27062bb5bf"
+    "/js/pages/index.min.js": "/js/pages/index.min.js?id=8020d451b106b5f900f6822b6a5592e2",
+    "/js/pages/author/index.min.js": "/js/pages/author/index.min.js?id=608950d8a2a859802c52e5c4e94f39eb",
+    "/js/pages/quotes/selected.min.js": "/js/pages/quotes/selected.min.js?id=6cbaad41c152da656c732ccff682612a",
+    "/js/pages/tags/index.min.js": "/js/pages/tags/index.min.js?id=31399b0739a7eb7398c2d31cfe498801",
+    "/js/pages/tags/selected.min.js": "/js/pages/tags/selected.min.js?id=129edb6c4ee283d41381ccbdbc9bb1e5",
+    "/js/auth/login.min.js": "/js/auth/login.min.js?id=86025c237e2b976f9b7cc8ac1ec616ec",
+    "/js/admin.min.js": "/js/admin.min.js?id=ea0f30c14d3cb710ca939d949e42ad75",
+    "/css/pages/tags/selected.min.css": "/css/pages/tags/selected.min.css?id=62d982b581c671adaab70d2ba1e46e9f",
+    "/css/pages/tags/index.min.css": "/css/pages/tags/index.min.css?id=7ecc0221353aea95ce17539a58b8dbac",
+    "/css/pages/quotes/selected.min.css": "/css/pages/quotes/selected.min.css?id=5a4f500e63674e8f9cd4a96a9fcc6367",
+    "/css/pages/author/index.min.css": "/css/pages/author/index.min.css?id=8516377c7b3362389c7e1eb3a9f8707c",
+    "/css/pages/index.min.css": "/css/pages/index.min.css?id=d56c406ed35243c0241513b12e1dac08",
+    "/css/auth/login.min.css": "/css/auth/login.min.css?id=9d7b90e82162436c5fc1d1664d8b7ce6"
 }
