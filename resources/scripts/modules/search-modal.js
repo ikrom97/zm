@@ -12,11 +12,13 @@ document.addEventListener('click', (evt) => {
 
 document.querySelector('#search-keyword')
   .addEventListener('input', debounce(async (evt) => {
-    axios
+    if (evt.target.value.length > 2) {
+      axios
       .get(`${evt.target.closest('form').action}?keyword=${evt.target.value}`)
       .then(({ data }) => {
         document.querySelector('.search-modal__results')
-          .innerHTML = data;
+        .innerHTML = data;
       })
       .catch((error) => console.error(error));
+    }
   }));

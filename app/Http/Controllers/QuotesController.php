@@ -21,7 +21,7 @@ class QuotesController extends Controller
   public function search(Request $request)
   {
     $data = new stdClass();
-    $data->quotes = Quote::where('quote', 'like', '%' . $request->keyword . '%')->paginate(10);
+    $data->quotes = Quote::where('quote', 'like', '%' . $request->keyword . '%')->get();
 
     return view('components.search-modal-results', compact('data'))->render();
   }

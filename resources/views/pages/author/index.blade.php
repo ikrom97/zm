@@ -30,8 +30,24 @@
         1 Мая 1972
       </p>
       <p class="author-page__info-item">
-        Из моего собственного философского творчества
-        <a class="button" href="{{ route('home') }}">Мысли</a>
+        Социальные сети:
+        <a
+          style="
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            color: #111;
+          "
+          href="https://twitter.com/zafar_mirzo"
+          title="Твиттер"
+          target="_blank"
+        >
+          <svg width="20" height="16">
+            <use xlink:href="{{ asset('images/stack.svg') }}#twitter" />
+          </svg>
+        </a>
       </p>
     </div>
   </main>

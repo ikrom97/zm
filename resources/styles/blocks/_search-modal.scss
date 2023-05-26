@@ -75,6 +75,20 @@
 }
 
 .search-modal__results {
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $base-secondary;
+  }
+
+  @media (min-width: 1200px) {
+    max-height: 400px;
+  }
+
   ul {
     list-style: none;
     margin: 0;
