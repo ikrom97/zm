@@ -18,10 +18,11 @@ export default function QuotesBoard() {
   useEffect(() => {
     axios
       .get(ApiRoute.Quotes['index'])
-      .then(({ data }) => setRows(data.map(({ id, quote, slug, created_at }) => ({
+      .then(({ data }) => setRows(data.map(({ id, quote, slug, created_at, tags }) => ({
         id,
         created_at: dayjs(created_at).format('YYYY-MM-DD HH:mm'),
         quote,
+        tags: tags.map(({ title }) => title).join(', '),
         slug: `#${slug?.padStart(4, '0')}`,
       }))))
       .catch(({ response }) => toast.error(response.data.message));
@@ -49,11 +50,12 @@ export default function QuotesBoard() {
   const columns = [
     { field: 'id', headerName: 'ID', width: 72 },
     { field: 'created_at', headerName: 'Дата', width: 140 },
-    { field: 'quote', headerName: 'Мысль', width: 640 },
+    { field: 'quote', headerName: 'Мысль', width: 400 },
+    { field: 'tags', headerName: 'Теги', width: 300 },
     {
       field: 'slug',
       headerName: 'Слаг',
-      width: 160,
+      width: 100,
       headerAlign: 'center',
       align: 'center',
     },
@@ -115,11 +117,13 @@ export default function QuotesBoard() {
       </Stack>
 
       <DataGrid
-        sx={{ backgroundColor: 'white', height: 1151 }}
+        sx={{ backgroundColor: 'white' }}
+        autoHeight
         rows={rows}
         columns={columns}
         pageSize={20}
         rowsPerPageOptions={[20]}
+        getRowHeight={() => 'auto'}
         checkboxSelection
         disableSelectionOnClick
         onSelectionModelChange={(newSelectionModel) => setSelection(newSelectionModel)}

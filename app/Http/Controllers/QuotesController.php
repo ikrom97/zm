@@ -29,7 +29,7 @@ class QuotesController extends Controller
   public function index()
   {
     try {
-      return Quote::latest()->get();
+      return Quote::with('tags')->latest()->get();
     } catch (\Throwable $th) {
       return $th;
     }
