@@ -14,7 +14,6 @@
         height="421"
         alt="Зафар Мирзо"
         loading="lazy">
-      <q class="author-page__quote">Цель высока, когда любовь обширна</q>
     </div>
 
     <h1 class="author-page__title">
