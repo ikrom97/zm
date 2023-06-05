@@ -6,7 +6,7 @@
 
 <a
   class="{{ $className }}"
-  @if (request()->route()->getName() != 'home') href="{{ route('home') }}" @endif
+  href="{{ route('home') }}"
 >
   <img
     src="{{ asset('images/logo.svg') }}"
